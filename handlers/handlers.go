@@ -22,7 +22,7 @@ func A(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// check domain name
-	re := regexp.MustCompile("^(https://|http://)?[a-zA-Z0-9./:]+(/|.)[a-zA-Z0-9]+$")
+	re := regexp.MustCompile("^(https://|http://)?[a-zA-Z0-9\\./:]+(/|\\.)[a-zA-Z0-9]+$")
 	if !re.MatchString(res.Value) {
 		msg := models.URL{LongURL: "Wrong form", ShortURL: "toang"}
 
